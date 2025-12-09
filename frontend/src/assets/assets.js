@@ -12,7 +12,11 @@ import walnut from './wall.jpg'
 import walkshelve from './walk.jpg'
 import workshop from './workshop.jpg'
 import chairman from './chairman.jpg'
+import HeroImage from './hero.jpg'
+import HeroImage2 from './hero2.png'
 export const assets = {
+    HeroImage,
+    HeroImage2,
     pexels,
     chair1,
     founder,
@@ -26,5 +30,6 @@ export const assets = {
     walnut,
     walkshelve,
     workshop,
-    chairman
+    chairman,
+    HeroImage
 }

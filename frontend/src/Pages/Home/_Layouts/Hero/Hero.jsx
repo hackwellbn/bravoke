@@ -5,6 +5,7 @@ import React from 'react';
 // but here it is as a standalone Hero section.
 import { Link } from 'react-router-dom'
 import './Hero.css'
+import { assets } from '../../../../assets/assets';
 
 const Hero = () => {
   return (
@@ -34,7 +35,8 @@ const Hero = () => {
       
       {/* Placeholder for the main visual - essential for a furniture site! */}
       <div className="hero-visual-area">
-        {/* Add a stunning, high-resolution image of a finished custom piece here */}
+        <img src={assets.HeroImage2} alt="Bravoke Furniture Workshop" />
+
       </div>
     </header>
   );

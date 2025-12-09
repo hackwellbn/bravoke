@@ -2,81 +2,137 @@
 
 /* --- General Hero Section --- */
 .hero-section {
+    max-width: 1400px; /* Use a consistent max width */
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 20px;
+    padding: calc(8 * var(--spacing-unit)) calc(3 * var(--spacing-unit)); /* 64px vertical padding */
     background-color: var(--color-secondary);
-    margin: 0 auto;
 }
 
 /* --- Content Container (Text and Buttons) --- */
 .hero-content-container {
-    max-width: 550px;
-    padding-right: 40px;
+    flex: 1;
+    max-width: 600px; /* Use max-width for better control */
+    padding-right: calc(5 * var(--spacing-unit)); /* 40px right padding */
 }
 
 .hero-section h1 {
     font-family: var(--font-family-header);
     font-size: 3.5rem;
-    color: var(--color-primary); /* Use a rich color for the main title */
+    color: var(--color-primary); 
     line-height: 1.2;
-    margin-bottom: 20px;
+    margin-bottom: calc(3 * var(--spacing-unit)); /* 24px */
 }
 
 .hero-section p {
     font-family: var(--font-family-body);
     font-size: 1.25rem;
     color: var(--color-text-dark);
-    margin-bottom: 40px;
+    margin-bottom: calc(5 * var(--spacing-unit)); /* 40px */
 }
 
 /* --- Call to Action Buttons --- */
 .hero-cta-buttons {
     display: flex;
-    gap: 15px;
+    gap: calc(2 * var(--spacing-unit)); /* 16px */
 }
 
 .hero-cta-buttons button {
-    padding: 15px 30px;
+    padding: calc(2 * var(--spacing-unit)) calc(4 * var(--spacing-unit)); /* 16px 32px */
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     font-family: var(--font-family-body);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .cta-primary {
-    background-color: var(--color-primary); /* The main brand color */
+    background-color: var(--color-primary); 
     color: var(--color-text-light);
 }
 
 .cta-primary:hover {
     background-color: var(--color-primary-dark);
-    box-shadow: 0 4px 8px var(--color-shadow);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .cta-secondary {
+    /* Updated to use brand colors for a more sophisticated look */
     background-color: transparent;
-    border: 2px solid var(--color-accent-gold);
-    color: var(--color-accent-gold);
+    border: 2px solid var(--color-primary); 
+    color: var(--color-primary);
 }
 
 .cta-secondary:hover {
-    background-color: var(--color-accent-gold);
+    background-color: var(--color-primary);
     color: var(--color-text-light);
 }
 
 /* --- Visual Area (Image/Media) --- */
 .hero-visual-area {
-    width: 45%;
-    min-height: 400px;
-    background-color: var(--color-secondary-dark); /* Placeholder for the image */
-    background-image: url('path/to/your/stunning/furniture/image.jpg'); /* **REPLACE THIS** */
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px; /* Soft rounded corners for sophistication */
-    box-shadow: 0 10px 20px var(--color-shadow);
+    /* KEY CHANGE: Removed min-height, background-image, background-size, etc. */
+    flex: 1; /* Allow to fill space */
+    max-width: 800px; /* Cap image width on large screens */
+    position: relative;
+    overflow: hidden;
+    
+    /* Responsive container using aspect ratio trick */
+    width: 100%;
+    padding-top: 60%; /* Aspect Ratio: 10:6 or 5:3 */
+    height: 0; 
+
+    border-radius: 8px; 
+}
+
+.hero-visual-area img {
+    /* Style the actual img tag to fill the responsive container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: calc(6 * var(--spacing-unit));
+    }
+
+    .hero-content-container {
+        padding-right: 0;
+        margin-bottom: calc(5 * var(--spacing-unit));
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+
+    .hero-cta-buttons {
+        justify-content: center;
+    }
+    
+    .hero-visual-area {
+        max-width: 100%;
+        padding-top: 75%; /* 4:3 Aspect Ratio for mobile/tablet */
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-cta-buttons {
+        flex-direction: column;
+    }
 }
