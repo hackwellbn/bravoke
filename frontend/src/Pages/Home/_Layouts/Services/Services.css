@@ -1,0 +1,184 @@
+/* Services.css - Now Category Showcase (Overlay Style) CSS */
+
+/* ---------------------------------- */
+/*          CATEGORY SHOWCASE SECTION */
+/* ---------------------------------- */
+
+.category-showcase-section {
+    padding: calc(4 * var(--spacing-unit)) calc(2 * var(--spacing-unit)); 
+    max-width: 1400px; 
+    margin: 0 auto;
+    font-family: var(--font-family-body), sans-serif;
+}
+
+/* ---------------------------------- */
+/*          GRID & CARD LAYOUT        */
+/* ---------------------------------- */
+
+.category-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: calc(3 * var(--spacing-unit)); /* 24px gap */
+}
+
+/* General Card Styling for Overlay */
+.category-card.overlay-card {
+    /* Set dimensions for the card */
+    flex: 1 1 300px; /* Allows three cards to fit on a wide screen */
+    height: 600px; /* Fixed height for visual consistency */
+    max-width: 450px;
+    
+    background-color: var(--color-secondary); 
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--color-shadow);
+    
+    position: relative; /* KEY: Context for the absolute overlay */
+    transition: transform 0.3s ease;
+}
+
+.category-card.overlay-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------------------------------- */
+/*          IMAGE BACKGROUND          */
+/* ---------------------------------- */
+
+.card-background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.category-card.overlay-card:hover .card-background-image {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* ---------------------------------- */
+/*          CONTENT OVERLAY           */
+/* ---------------------------------- */
+
+.card-content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: calc(4 * var(--spacing-unit)); /* 32px padding */
+    color: var(--color-text-light); /* Light text on dark/image background */
+    text-align: left;
+    
+    /* Subtle gradient overlay for text readability on image */
+    background: linear-gradient(
+        180deg, 
+        rgba(0, 0, 0, 0.6) 0%, 
+        rgba(0, 0, 0, 0.2) 25%, 
+        rgba(0, 0, 0, 0.05) 50%,
+        rgba(0, 0, 0, 0.1) 75%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes list/button to the bottom */
+}
+
+/* Item Count (Top) */
+.item-count {
+    color: var(--color-secondary); /* Off-White/Light stone for count */
+    font-weight: 600;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Category Title (Top) */
+.card-content-overlay h3 {
+    font-family: var(--font-family-header), serif;
+    font-size: 2.5em;
+    color: var(--color-text-light);
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for clarity on image */
+}
+
+/* Category List (Bottom) */
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--color-text-light);
+    font-size: 1em;
+    line-height: 1.8;
+    column-count: 2; /* Two columns for list items */
+    column-gap: calc(3 * var(--spacing-unit));
+    opacity: 0.9;
+    font-weight: 300;
+    flex-grow: 1; /* Allow list to take up vertical space */
+    padding-top: calc(2 * var(--spacing-unit));
+}
+
+.category-list li {
+    position: relative;
+    padding-left: calc(2 * var(--spacing-unit));
+}
+
+/* Custom Bullet/Dot for List Items */
+.category-list li::before {
+    content: "•"; 
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-gold); /* Gold/Bronze dot for accent */
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+/* Shop Now Button */
+.shop-now-btn {
+    align-self: flex-start; /* Aligns button to the left */
+    margin-top: calc(3 * var(--spacing-unit));
+    padding: calc(1.5 * var(--spacing-unit)) calc(3 * var(--spacing-unit)); /* 12px 24px */
+    background-color: var(--color-primary); /* Dark wood background */
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.shop-now-btn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* ---------------------------------- */
+/*          MEDIA QUERIES             */
+/* ---------------------------------- */
+
+@media (max-width: 1000px) {
+    /* Two columns on medium screens */
+    .category-card.overlay-card {
+        flex: 1 1 45%; 
+        height: 400px;
+    }
+}
+
+@media (max-width: 650px) {
+    /* One column on small screens */
+    .category-card.overlay-card {
+        flex: 1 1 100%;
+        max-width: 90%;
+        height: 350px;
+        padding: calc(2 * var(--spacing-unit));
+    }
+    .card-content-overlay h3 {
+        font-size: 2em;
+    }
+    .category-list {
+        column-count: 1;
+    }
+}

@@ -1,0 +1,187 @@
+/* Process.css */
+
+/* ---------------------------------- */
+/*          SECTION STYLES            */
+/* ---------------------------------- */
+
+.process-section {
+    /* Use 8px spacing unit for consistent padding */
+    padding: calc(10 * var(--spacing-unit)) 0; 
+    background-color: var(--color-text-light); /* White background */
+    font-family: var(--font-family-body), sans-serif;
+    color: var(--color-text-dark);
+}
+
+.process-wrapper {
+    max-width: 1000px; /* Narrower width for the timeline focus */
+    margin: 0 auto;
+    padding: 0 calc(3 * var(--spacing-unit));
+}
+
+.subtitle-tag {
+    display: block;
+    color: var(--color-primary-dark);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: calc(2 * var(--spacing-unit));
+}
+
+.process-header {
+    text-align: center;
+    margin-bottom: calc(10 * var(--spacing-unit)); /* 80px */
+}
+
+.process-header h1 {
+    font-family: var(--font-family-header), serif;
+    font-size: 3.5rem;
+    color: var(--color-primary); 
+    margin: 0 0 calc(3 * var(--spacing-unit)) 0;
+    line-height: 1.1;
+}
+
+.process-intro {
+    font-size: 1.1rem;
+    color: var(--color-text-dark);
+    opacity: 0.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ---------------------------------- */
+/*          TIMELINE STYLES           */
+/* ---------------------------------- */
+
+.process-timeline {
+    position: relative;
+    padding: calc(4 * var(--spacing-unit)) 0;
+}
+
+/* The vertical line (Timeline backbone) */
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: var(--color-secondary-dark); /* Subtle line */
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: calc(8 * var(--spacing-unit)); /* 64px between items */
+    position: relative;
+}
+
+/* Alternate Left/Right alignment */
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-icon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* The circle containing the icon */
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Use background color for the ring to match the section background */
+    box-shadow: 0 0 0 5px var(--color-text-light); 
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .icon-circle {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 5px var(--color-text-light), 0 0 10px rgba(6, 53, 14, 0.5);
+}
+
+.timeline-content {
+    width: 45%; 
+    padding: calc(3 * var(--spacing-unit)); /* 24px padding */
+    background-color: var(--color-secondary); /* Light card background */
+    border-radius: 6px;
+    box-shadow: 0 2px 10px var(--color-shadow);
+    text-align: left;
+}
+
+/* Positioning content cards relative to the center line */
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: 55%; /* Push to the left */
+}
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 55%; /* Push to the right */
+}
+
+.step-number {
+    display: block;
+    color: var(--color-primary-dark);
+    font-weight: 700;
+    margin-bottom: calc(1 * var(--spacing-unit));
+    text-transform: uppercase;
+}
+
+.timeline-content h3 {
+    font-family: var(--font-family-header), serif;
+    font-size: 1.6rem;
+    color: var(--color-text-dark);
+    margin: 0 0 calc(1.5 * var(--spacing-unit)) 0;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+
+/* ---------------------------------- */
+/*          MEDIA QUERIES (Mobile View) */
+/* ---------------------------------- */
+
+@media (max-width: 768px) {
+    
+    .process-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    /* Collapse the timeline to a single-sided mobile view */
+    .process-timeline::before {
+        left: calc(3 * var(--spacing-unit)); /* Move line to the left edge area */
+        transform: none;
+    }
+    
+    .timeline-item {
+        flex-direction: column !important; /* Force all to stack */
+        margin-bottom: calc(6 * var(--spacing-unit));
+    }
+    
+    .timeline-icon {
+        /* Align icon to the new line position */
+        left: calc(3 * var(--spacing-unit)); 
+        transform: translateX(-50%);
+    }
+
+    .timeline-content {
+        width: 100%;
+        /* Reset margins used for two-sided layout */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        /* Add padding on the left to make space for the icon/line */
+        padding-left: calc(8 * var(--spacing-unit)); 
+    }
+}

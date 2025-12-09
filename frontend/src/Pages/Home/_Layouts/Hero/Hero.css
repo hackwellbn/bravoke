@@ -1,0 +1,82 @@
+/* Hero.css */
+
+/* --- General Hero Section --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background-color: var(--color-secondary);
+    margin: 0 auto;
+}
+
+/* --- Content Container (Text and Buttons) --- */
+.hero-content-container {
+    max-width: 550px;
+    padding-right: 40px;
+}
+
+.hero-section h1 {
+    font-family: var(--font-family-header);
+    font-size: 3.5rem;
+    color: var(--color-primary); /* Use a rich color for the main title */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-family: var(--font-family-body);
+    font-size: 1.25rem;
+    color: var(--color-text-dark);
+    margin-bottom: 40px;
+}
+
+/* --- Call to Action Buttons --- */
+.hero-cta-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-cta-buttons button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--font-family-body);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-primary {
+    background-color: var(--color-primary); /* The main brand color */
+    color: var(--color-text-light);
+}
+
+.cta-primary:hover {
+    background-color: var(--color-primary-dark);
+    box-shadow: 0 4px 8px var(--color-shadow);
+}
+
+.cta-secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-accent-gold);
+    color: var(--color-accent-gold);
+}
+
+.cta-secondary:hover {
+    background-color: var(--color-accent-gold);
+    color: var(--color-text-light);
+}
+
+/* --- Visual Area (Image/Media) --- */
+.hero-visual-area {
+    width: 45%;
+    min-height: 400px;
+    background-color: var(--color-secondary-dark); /* Placeholder for the image */
+    background-image: url('path/to/your/stunning/furniture/image.jpg'); /* **REPLACE THIS** */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px; /* Soft rounded corners for sophistication */
+    box-shadow: 0 10px 20px var(--color-shadow);
+}

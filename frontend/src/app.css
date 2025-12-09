@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+:root {
+  /*
+  |--------------------------------------------------------------------------
+  | PRIMARY BRAND COLORS
+  |--------------------------------------------------------------------------
+  | These colors are inspired by natural wood, leather, and refined metals.
+  */
+
+  /* Warm Dark Brown / Wood Tone - Excellent for primary text, backgrounds, and main buttons */
+  --color-primary: #06350e; /* Suggested: Dark Oak, Rich Walnut */ 
+  --color-primary-dark: #644a2b; /* For button hover states */
+
+  /* Light Accent / Stone / Light Wood - For backgrounds, cards, and light sections */
+  --color-secondary: #F7F5F2; /* Suggested: Off-White, Cream, Light Stone */
+  --color-secondary-dark: #EAE6DF; /* For subtle borders or separator lines */
+  
+  /*
+  |--------------------------------------------------------------------------
+  | ACCENT & UTILITY COLORS
+  |--------------------------------------------------------------------------
+  */
+
+  /* Sophisticated Gold/Bronze - For highlights, brand accents, and key elements */
+  --color-accent-gold: hwb(77 0% 97%); 
+  --color-accent-gold-dark: #06350e;
+  /* Text & Utility Colors */
+  --color-text-dark: #333333; /* Main body text and headings */
+  --color-text-light: #FFFFFF; /* Text on dark backgrounds */
+  --color-shadow: rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+  /*
+  |--------------------------------------------------------------------------
+  | TYPOGRAPHY & SPACING
+  |--------------------------------------------------------------------------
+  */
+  
+  --font-family-header: 'Playfair Display', serif; /* Use a classic, sophisticated font */
+  --font-family-body: 'Roboto', sans-serif;       /* Use a clean, readable font */
+
+  --spacing-unit: 8px; /* Standard unit for padding/margins (8px, 16px, 24px, 32px, etc.) */
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+  font-family: "Inter", sans-serif;
+}

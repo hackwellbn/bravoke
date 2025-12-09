@@ -1,0 +1,129 @@
+/* Privacy.css */
+
+/* ---------------------------------- */
+/*          SECTION STYLES            */
+/* ---------------------------------- */
+
+.privacy-section {
+    padding: calc(10 * var(--spacing-unit)) 0; 
+    background-color: var(--color-text-light); /* White/light background */
+    font-family: var(--font-family-body), sans-serif;
+    color: var(--color-text-dark);
+}
+
+.privacy-wrapper {
+    max-width: 900px; /* Narrow width for enhanced readability of text */
+    margin: 0 auto;
+    padding: 0 calc(3 * var(--spacing-unit));
+}
+
+.subtitle-tag {
+    /* Reused for consistency */
+    display: block;
+    color: var(--color-primary-dark);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: calc(2 * var(--spacing-unit));
+}
+
+/* ---------------------------------- */
+/*          HEADER STYLES             */
+/* ---------------------------------- */
+
+.privacy-header {
+    text-align: center;
+    margin-bottom: calc(8 * var(--spacing-unit));
+}
+
+.privacy-header h1 {
+    font-family: var(--font-family-header), serif;
+    font-size: 3rem;
+    color: var(--color-primary); 
+    margin: 0 0 calc(2 * var(--spacing-unit)) 0;
+    line-height: 1.1;
+}
+
+.last-updated {
+    font-size: 0.9rem;
+    color: var(--color-text-dark);
+    opacity: 0.6;
+}
+
+/* ---------------------------------- */
+/*          CONTENT BODY              */
+/* ---------------------------------- */
+
+.privacy-content {
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.policy-section {
+    margin-bottom: calc(6 * var(--spacing-unit));
+    border-left: 3px solid var(--color-primary-dark); /* Subtle left border accent */
+    padding-left: calc(3 * var(--spacing-unit));
+}
+
+.policy-section h2 {
+    font-family: var(--font-family-body), sans-serif;
+    font-size: 1.8rem;
+    color: var(--color-text-dark);
+    margin-bottom: calc(2 * var(--spacing-unit));
+    font-weight: 700;
+}
+
+.policy-section p {
+    margin-bottom: calc(2 * var(--spacing-unit));
+}
+
+.policy-section ul {
+    list-style-type: none; /* Remove default bullet */
+    padding-left: 0;
+    margin-left: calc(4 * var(--spacing-unit));
+}
+
+.policy-section ul li {
+    position: relative;
+    padding-left: calc(3 * var(--spacing-unit));
+    margin-bottom: calc(1 * var(--spacing-unit));
+}
+
+/* Custom bullet point */
+.policy-section ul li::before {
+    content: "\2022"; /* Unicode bullet */
+    position: absolute;
+    left: 0;
+    color: var(--color-primary); /* Dark wood color bullet */
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Link styling */
+.privacy-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.privacy-content a:hover {
+    color: var(--color-primary-dark);
+}
+
+
+/* ---------------------------------- */
+/*          MEDIA QUERIES             */
+/* ---------------------------------- */
+
+@media (max-width: 600px) {
+    .privacy-header h1 {
+        font-size: 2.5rem;
+    }
+    .policy-section {
+        padding-left: calc(2 * var(--spacing-unit));
+    }
+    .policy-section h2 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap');
+
+/* --- Global Overrides (from your input) --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /* Use a more specific font stack based on your @import */
+  font-family: 'Roboto', sans-serif; 
+  background-color: var(--color-secondary); /* Apply light background to body */
+}
+/* --- End Global Overrides --- */
+
+/* ---------------------------------- */
+/*          CONTAINER STYLES          */
+/* ---------------------------------- */
+
+.products_wrapper {
+  max-width: 1300px; /* Slightly wider container */
+  margin: 0 auto;
+  padding: calc(4 * var(--spacing-unit)) calc(2 * var(--spacing-unit)); /* 32px 16px */
+}
+
+.products_wrapper h1 {
+  /* Use the sophisticated header font and primary dark color */
+  font-family: 'Playfair Display', serif; 
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: calc(5 * var(--spacing-unit)); /* 40px */
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* ---------------------------------- */
+/*          FILTER BUTTONS            */
+/* ---------------------------------- */
+
+.filter_buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(1.5 * var(--spacing-unit)); /* 12px */
+  margin-bottom: calc(5 * var(--spacing-unit)); /* 40px */
+}
+
+.filter_btn {
+  padding: calc(1 * var(--spacing-unit)) calc(3 * var(--spacing-unit)); /* 8px 24px */
+  border: 1px solid var(--color-primary);
+  border-radius: 4px; /* Slightly sharper edge for modern look */
+  background-color: transparent;
+  color: var(--color-primary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.filter_btn:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-light);
+  border-color: var(--color-primary-dark);
+}
+
+.filter_btn.active {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(6, 53, 14, 0.4); /* Shadow using primary color */
+}
+
+/* ---------------------------------- */
+/*       HORIZONTAL SCROLL BAR        */
+/* ---------------------------------- */
+
+.products_container.horizontal_scroll {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: calc(3 * var(--spacing-unit)); /* 24px */
+  gap: calc(3 * var(--spacing-unit)); /* 24px space between cards */
+  scroll-snap-type: x mandatory;
+}
+
+.products_container.horizontal_scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---------------------------------- */
+/*          PRODUCT CARD STYLES       */
+/* ---------------------------------- */
+
+.product_card {
+  flex: 0 0 320px; /* Slightly wider card */
+  width: 320px;
+  background-color: var(--color-text-light); /* White background */
+  border-radius: 8px;
+  box-shadow: 0 6px 20px var(--color-shadow);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.product_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Image and Badge */
+.product_head {
+  position: relative;
+  height: 220px; /* Taller image */
+  overflow: hidden;
+}
+
+.product_head img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth, powerful transition */
+}
+
+.product_card:hover .product_head img {
+    transform: scale(1.08);
+}
+
+/* Discount Badge Styling (now uses a more sophisticated gold/bronze) */
+.discount_badge {
+    position: absolute;
+    top: calc(2 * var(--spacing-unit)); /* 16px */
+    right: calc(2 * var(--spacing-unit)); /* 16px */
+    background-color: var(--color-accent-gold-dark); /* Dark primary for badge background */
+    color: var(--color-text-light);
+    padding: calc(0.5 * var(--spacing-unit)) calc(1.5 * var(--spacing-unit)); /* 4px 12px */
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.8em;
+    z-index: 10;
+    letter-spacing: 0.5px;
+}
+
+.product_info {
+    padding: calc(2 * var(--spacing-unit)); /* 16px */
+    flex-grow: 1; /* Allows info section to fill space */
+}
+
+/* Text and Typography */
+.product_category {
+  color: var(--color-primary); /* Primary color for category label */
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-bottom: calc(0.5 * var(--spacing-unit)); /* 4px */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.product_title {
+  font-family: 'Playfair Display', serif; /* Header font for title */
+  font-size: 1.5em;
+  color: var(--color-text-dark);
+  margin: 0 0 calc(1 * var(--spacing-unit)) 0; /* 8px */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+}
+
+/* Prices */
+.product_prices {
+  display: flex;
+  align-items: baseline; /* Align prices nicely */
+  gap: calc(1.5 * var(--spacing-unit)); /* 12px */
+  margin-bottom: calc(1.5 * var(--spacing-unit)); /* 12px */
+}
+
+.from_price {
+  color: var(--color-text-light);
+  text-decoration: line-through;
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--color-text-dark);
+  opacity: 0.6;
+}
+
+.to_price {
+  color: var(--color-primary); /* Use primary color for the main price */
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+/* Ratings */
+.product_ratings {
+  color: var(--color-text-dark);
+  font-size: 0.9em;
+  margin-bottom: calc(2 * var(--spacing-unit)); /* 16px */
+  font-weight: 600;
+}
+
+.product_ratings span {
+    color: var(--color-accent-gold-dark); /* Use a shade of gold/bronze for the star */
+    margin-right: calc(0.5 * var(--spacing-unit));
+}
+
+/* Product Gallery (Thumbnail Strip) */
+.product_gallery {
+  display: flex;
+  gap: calc(0.5 * var(--spacing-unit));
+  padding: 0 calc(2 * var(--spacing-unit)); /* 16px */
+}
+
+.product_gallery img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--color-secondary-dark); /* Subtle border for definition */
+  opacity: 0.9;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.product_gallery img:hover {
+    opacity: 1;
+    border-color: var(--color-primary-dark);
+}
+
+/* Call to Action Button */
+.add_to_cart_btn {
+    width: 100%;
+    padding: calc(2 * var(--spacing-unit)) 0; /* 16px */
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    margin-top: calc(2 * var(--spacing-unit));
+}
+
+.add_to_cart_btn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* No Products Message */
+.no_products {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 1.5em;
+    padding: 50px 0;
+    font-style: italic;
+}

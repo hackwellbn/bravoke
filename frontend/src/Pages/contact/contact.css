@@ -1,0 +1,228 @@
+/* Contact.css */
+
+/* ---------------------------------- */
+/*          SECTION STYLES            */
+/* ---------------------------------- */
+
+.contact-section {
+    padding: calc(10 * var(--spacing-unit)) 0; 
+    background-color: var(--color-secondary); 
+    font-family: var(--font-family-body), sans-serif;
+    color: var(--color-text-dark);
+}
+
+.contact-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 calc(3 * var(--spacing-unit));
+}
+
+.subtitle-tag {
+    /* Reused for consistency */
+    display: block;
+    color: var(--color-primary-dark);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: calc(2 * var(--spacing-unit));
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: calc(8 * var(--spacing-unit));
+}
+
+.contact-header h1 {
+    font-family: var(--font-family-header), serif;
+    font-size: 3.5rem;
+    color: var(--color-primary); 
+    margin: 0 0 calc(2 * var(--spacing-unit)) 0;
+}
+
+.contact-intro {
+    font-size: 1.1rem;
+    color: var(--color-text-dark);
+    opacity: 0.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ---------------------------------- */
+/*          CONTAINER (TWO-COLUMN)    */
+/* ---------------------------------- */
+
+.contact-container {
+    display: flex;
+    gap: calc(8 * var(--spacing-unit)); /* 64px gap */
+    align-items: stretch; /* Stretch columns to match height */
+}
+
+.contact-details,
+.contact-form-container {
+    flex: 1;
+    padding: calc(5 * var(--spacing-unit)); /* 40px internal padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 20px var(--color-shadow);
+}
+
+.contact-details {
+    background-color: var(--color-primary); /* Darker background for contrast */
+    color: var(--color-text-light);
+}
+
+.contact-details h2 {
+    font-family: var(--font-family-header), serif;
+    font-size: 2rem;
+    color: var(--color-text-light);
+    margin-bottom: calc(5 * var(--spacing-unit));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: calc(2 * var(--spacing-unit));
+}
+
+.contact-form-container {
+    background-color: var(--color-text-light); /* White background for form */
+}
+
+.contact-form-container h2 {
+    font-family: var(--font-family-header), serif;
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: calc(5 * var(--spacing-unit));
+}
+
+/* ---------------------------------- */
+/*          DETAIL ITEMS              */
+/* ---------------------------------- */
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: calc(4 * var(--spacing-unit));
+}
+
+.detail-icon {
+    color: var(--color-secondary); /* Light accent on dark background */
+    margin-right: calc(3 * var(--spacing-unit));
+    flex-shrink: 0;
+}
+
+.detail-text h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 calc(0.5 * var(--spacing-unit)) 0;
+}
+
+.detail-text p {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* ... (Keep preceding CSS unchanged) ... */
+
+.map-placeholder {
+    height: 250px;
+    background-color: var(--color-primary-dark);
+    border-radius: 4px;
+    margin-top: calc(5 * var(--spacing-unit));
+    /* Remove text centering since it's now an iframe */
+    overflow: hidden; /* Ensure the iframe respects border-radius */
+}
+
+.map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    /* No border needed, handled by style={{border: 0}} in JSX */
+}
+
+/* ... (Keep rest of contact.css unchanged) ... */
+
+/* ---------------------------------- */
+/*          FORM STYLES               */
+/* ---------------------------------- */
+
+.quote-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: calc(3 * var(--spacing-unit));
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1; /* Make message/button span both columns */
+}
+
+.quote-form label {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: calc(0.5 * var(--spacing-unit));
+}
+
+.quote-form input,
+.quote-form select,
+.quote-form textarea {
+    padding: calc(1.5 * var(--spacing-unit));
+    border: 1px solid var(--color-secondary-dark);
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: var(--color-secondary);
+    transition: border-color 0.3s ease;
+}
+
+.quote-form input:focus,
+.quote-form textarea:focus,
+.quote-form select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(6, 53, 14, 0.1);
+}
+
+.submit-btn {
+    grid-column: 1 / -1;
+    padding: calc(2 * var(--spacing-unit)) 0;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    margin-top: calc(3 * var(--spacing-unit));
+}
+
+.submit-btn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* ---------------------------------- */
+/*          MEDIA QUERIES             */
+/* ---------------------------------- */
+
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        gap: calc(5 * var(--spacing-unit));
+    }
+    .contact-details,
+    .contact-form-container {
+        padding: calc(4 * var(--spacing-unit));
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-header h1 {
+        font-size: 2.5rem;
+    }
+    .quote-form {
+        grid-template-columns: 1fr; /* Single column form on mobile */
+    }
+}

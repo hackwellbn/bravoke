@@ -1,0 +1,263 @@
+/* Footer.css */
+
+/* ---------------------------------- */
+/*          GENERAL FOOTER STYLES     */
+/* ---------------------------------- */
+
+.footer {
+    width: 100%;
+    background-color: var(--color-primary); /* Dark wood tone */
+    color: var(--color-secondary); 
+    padding-top: calc(8 * var(--spacing-unit)); /* 64px */
+    font-family: var(--font-family-body), sans-serif;
+}
+
+.footer-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 calc(3 * var(--spacing-unit)); /* 24px horizontal padding */
+}
+
+.footer-content-container {
+    padding-bottom: calc(6 * var(--spacing-unit)); /* 48px */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    border-bottom: 1px solid var(--color-primary-dark);
+}
+
+.footer-section {
+    width: 23%; /* Evenly distribute space */
+    min-width: 180px; 
+    margin-bottom: calc(4 * var(--spacing-unit));
+}
+
+.footer-section h3 {
+    font-family: var(--font-family-header), serif;
+    font-size: 1.6rem;
+    color: var(--color-text-light); /* White/Light Text */
+    margin-bottom: calc(2 * var(--spacing-unit));
+    letter-spacing: 1px;
+}
+
+.footer-section h4 {
+    font-size: 1.1rem;
+    color: var(--color-secondary-dark); /* Subtle accent color for headings */
+    margin-bottom: calc(3 * var(--spacing-unit));
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+/* --- Links Styling --- */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: calc(1.5 * var(--spacing-unit));
+}
+
+.footer-section a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    opacity: 0.85;
+}
+
+.footer-section a:hover {
+    color: var(--color-accent-gold); /* Gold accent on hover */
+    opacity: 1;
+}
+
+.footer-cta-text a {
+    color: var(--color-accent-gold);
+    font-weight: 700;
+    text-decoration: underline;
+    opacity: 1;
+}
+.footer-cta-text a:hover {
+    color: var(--color-secondary);
+}
+
+/* --- Social Media Icons --- */
+.social-icons {
+    display: flex;
+    gap: calc(3 * var(--spacing-unit)); /* 24px */
+    font-size: 1.5rem;
+    margin-top: calc(1 * var(--spacing-unit));
+}
+
+.social-icons a {
+    color: var(--color-secondary);
+    transition: color 0.3s ease;
+    opacity: 1;
+}
+
+.social-icons a:hover {
+    color: var(--color-accent-gold);
+}
+
+
+/* ---------------------------------- */
+/*      BRAVOKE GIANT CENTERED TEXT   */
+/* ---------------------------------- */
+
+.footer-giant-brand {
+    text-align: center;
+    padding: calc(6 * var(--spacing-unit)) 0; /* 48px vertical padding */
+    font-family: var(--font-family-header), serif;
+    font-size: 5rem; /* Large font size */
+    font-weight: 700;
+    color: var(--color-primary-dark); /* Use primary-dark for a subtle, embossed effect */
+    opacity: 0.4;
+    letter-spacing: 10px;
+    border-bottom: 1px solid var(--color-primary-dark); /* Separator line */
+}
+
+
+/* ---------------------------------- */
+/*          BOTTOM BAR / LEGAL        */
+/* ---------------------------------- */
+
+.footer-bottom {
+    padding: calc(3 * var(--spacing-unit)) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    opacity: 0.7;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.legal-links a {
+    color: inherit; /* Inherit color from footer-bottom */
+    margin-left: calc(4 * var(--spacing-unit));
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.legal-links a:hover {
+    opacity: 1;
+}
+
+
+/* ---------------------------------- */
+/*          MEDIA QUERIES             */
+/* ---------------------------------- */
+
+@media (max-width: 900px) {
+    .footer-content-container {
+        /* Align content to the left and allow two columns */
+        justify-content: flex-start; 
+        gap: 5%;
+    }
+    .footer-section {
+        width: 45%; /* Two columns */
+        min-width: unset;
+    }
+    .footer-giant-brand {
+        font-size: 4rem;
+        letter-spacing: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-content-container {
+        flex-direction: column; /* Stack all sections vertically */
+        align-items: center;
+        text-align: center;
+    }
+    .footer-section {
+        width: 100%;
+        min-width: 100%;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: calc(2 * var(--spacing-unit));
+    }
+    .legal-links {
+        display: flex;
+        flex-direction: column;
+        gap: calc(1 * var(--spacing-unit));
+    }
+    .legal-links a {
+        margin-left: 0;
+    }
+    .footer-giant-brand {
+        font-size: 3rem;
+        letter-spacing: 5px;
+    }
+}
+
+/* Footer.css - REVISED BRAVOKE GIANT CENTERED TEXT */
+
+/* ---------------------------------- */
+/*      BRAVOKE GIANT CENTERED TEXT   */
+/* ---------------------------------- */
+
+.footer-giant-brand {
+    text-align: center;
+    /* Remove padding and border for a cleaner look */
+    padding: calc(4 * var(--spacing-unit)) 0; 
+    color: yellow;
+    font-family: var(--font-family-header), serif;
+    font-size: 10vw; /* Use Viewport Width for dynamic sizing */
+    line-height: 1; /* Keep text compact */
+    font-weight: 800;
+    
+    color: var(--color-primary-dark);
+    opacity: 0.2; /* Make it a very subtle background watermark */
+    
+    /* Use extremely wide spacing to stretch it across the screen */
+    letter-spacing: 5vw; 
+    
+    /* Ensure it spans the full width of the container/viewport */
+    width: 100%;
+    overflow: hidden; /* Hide any overflow caused by the letter spacing */
+    
+    /* Reset margins/padding */
+    margin: 0;
+    padding-left: 1vw; /* Minor left padding to adjust visual centering due to letter-spacing */
+    padding-right: 1vw; 
+}
+
+
+/* ---------------------------------- */
+/*          MEDIA QUERIES             */
+/* ---------------------------------- */
+
+@media (max-width: 900px) {
+    /* Keep other media queries as is, but adjust the giant brand size */
+    .footer-giant-brand {
+        font-size: 15vw; 
+        letter-spacing: 7vw;
+        padding: calc(4 * var(--spacing-unit)) 0; 
+    }
+    /* The rest of the 900px media query styles remain for other sections */
+}
+
+@media (max-width: 600px) {
+    /* Keep other media queries as is, but adjust the giant brand size */
+    .footer-giant-brand {
+        font-size: 20vw;
+        letter-spacing: 5vw;
+        padding: calc(3 * var(--spacing-unit)) 0; 
+    }
+    /* The rest of the 600px media query styles remain for other sections */
+}
