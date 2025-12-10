@@ -116,7 +116,7 @@
     font-family: var(--font-family-header), serif;
     font-size: 5rem; /* Large font size */
     font-weight: 700;
-    color: var(--color-primary-dark); /* Use primary-dark for a subtle, embossed effect */
+    color: #fff; /* Use primary-dark for a subtle, embossed effect */
     opacity: 0.4;
     letter-spacing: 10px;
     border-bottom: 1px solid var(--color-primary-dark); /* Separator line */
@@ -215,7 +215,6 @@
     text-align: center;
     /* Remove padding and border for a cleaner look */
     padding: calc(4 * var(--spacing-unit)) 0; 
-    color: yellow;
     font-family: var(--font-family-header), serif;
     font-size: 10vw; /* Use Viewport Width for dynamic sizing */
     line-height: 1; /* Keep text compact */

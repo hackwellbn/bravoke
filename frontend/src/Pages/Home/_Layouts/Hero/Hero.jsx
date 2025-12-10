@@ -3,7 +3,7 @@
 import React from 'react';
 // This component should ideally be wrapped in a layout component that includes Navbar and Footer,
 // but here it is as a standalone Hero section.
-import { Link } from 'react-router-dom'
+import { Link, Links } from 'react-router-dom'
 import './Hero.css'
 import { assets } from '../../../../assets/assets';
 
@@ -24,12 +24,12 @@ const Hero = () => {
 
         {/* Call-to-Action Buttons */}
         <div className="hero-cta-buttons">
-          <button className="cta-primary">
+          <Link to="/contact" className="cta-primary">
             Start Your Custom Project
-          </button>
-          <button className="cta-secondary">
+          </Link>
+          <Link to="/portfolio" className="cta-secondary">
             Explore The Portfolio
-          </button>
+          </Link>
         </div>
       </div>
       

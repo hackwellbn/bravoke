@@ -136,3 +136,17 @@
         flex-direction: column;
     }
 }
+.hero-cta-buttons a {
+    padding: calc(2 * var(--spacing-unit)) calc(4 * var(--spacing-unit));
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-family-body);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it behave like a button */
+}

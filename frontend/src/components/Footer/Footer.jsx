@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
         
         {/* --- BRAVOKE Big Centered Text --- */}
-        <div className="footer-giant-brand">
+        <div className="footer-giant-brand" >
             BRAVOKE
         </div>
 
