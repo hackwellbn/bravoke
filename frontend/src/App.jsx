@@ -10,6 +10,7 @@ import Contact from './Pages/contact/contact.jsx'
 import Process from './Pages/Process/Process.jsx'
 import Privacy from './Pages/Privacy/privacy.jsx'
 import Terms from './Pages/Terms/Terms.jsx'
+import ScrollToTop from './components/scrollTotop/ScrollTotop.jsx'
 const App = () => {
   return (
     <div>
@@ -23,6 +24,7 @@ const App = () => {
         <Route path='/privacy' element={<Privacy/>} />
         <Route path='/terms' element={<Terms/>} />
       </Routes>
+      <ScrollToTop />
       <Footer/>
     </div>
   )

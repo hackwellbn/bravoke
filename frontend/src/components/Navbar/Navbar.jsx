@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+// 💡 KEY CHANGE: Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 import './Navbar.css'; 
-import { FaBars, FaTimes } from 'react-icons/fa'; // Assuming you use react-icons or similar
+import { FaBars, FaTimes } from 'react-icons/fa'; 
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,9 +21,9 @@ const Navbar = () => {
       <div className="navbar-container">
         
         {/* Company Logo/Brand Name */}
-        <a href="/" className="navbar-brand">
+        <Link to="/" className="navbar-brand">
           BRAVOKE
-        </a>
+        </Link>
 
         {/* Hamburger Menu Button (Visible on mobile only) */}
         <div className="menu-icon" onClick={toggleMenu}>
@@ -30,14 +32,14 @@ const Navbar = () => {
         
         {/* Navigation Links (State-controlled visibility) */}
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <li><a href="/" onClick={closeMenu}>Home</a></li>
-          <li><a href="/process" onClick={closeMenu}>Our Process</a></li>
-          <li><a href="/portfolio" onClick={closeMenu}>Portfolio</a></li>
-          <li><a href="/about" onClick={closeMenu}>About Us</a></li>
+          <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+          <li><Link to="/process" onClick={closeMenu}>Our Process</Link></li>
+          <li><Link to="/portfolio" onClick={closeMenu}>Portfolio</Link></li>
+          <li><Link to="/about" onClick={closeMenu}>About Us</Link></li>
           <li>
-            <a href="/contact" className="nav-cta" onClick={closeMenu}>
+            <Link to="/contact" className="nav-cta" onClick={closeMenu}>
               Contact & Quote
-            </a>
+            </Link>
           </li>
         </ul>
         

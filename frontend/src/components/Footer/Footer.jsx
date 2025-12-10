@@ -1,6 +1,7 @@
 import React from 'react';
+// 💡 KEY CHANGE: Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 import './Footer.css'; 
-// Import Social Media Icons (using Font Awesome for common icons)
 import { FaFacebookF, FaInstagram, FaPinterestP } from 'react-icons/fa';
 
 const Footer = () => {
@@ -16,7 +17,8 @@ const Footer = () => {
               Bespoke furniture crafted for life. Designing and building custom pieces that elevate your home or office space.
             </p>
             <p className="footer-cta-text">
-                <a href="/contact">Request a Custom Quote Today!</a>
+                {/* Internal link uses Link */}
+                <Link to="/contact">Request a Custom Quote Today!</Link>
             </p>
           </div>
           
@@ -24,23 +26,23 @@ const Footer = () => {
           <div className="footer-section quick-links">
             <h4>Navigation</h4>
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/portfolio">Portfolio</a></li>
-              <li><a href="/process">Our Process</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/contact">Contact & Quote</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/portfolio">Portfolio</Link></li>
+              <li><Link to="/process">Our Process</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/contact">Contact & Quote</Link></li>
             </ul>
           </div>
           
           {/* Section 3: Contact Information */}
           <div className="footer-section contact-info">
             <h4>Get In Touch</h4>
-            <p>Email: <a href="mailto:info@bravoke.com">info@bravoke.com</a></p>
+            <p>Email: <a href="mailto:info@bravoke.com">info@bravoke.com</a></p> {/* External link remains <a> */}
             <p>Phone: +254 722 784578(Sales)</p>
             <p>Address: First Avenue Eastleigh, Nairobi, Kenya</p>
           </div>
           
-          {/* Section 4: Social Media */}
+          {/* Section 4: Social Media (External links remain <a>) */}
           <div className="footer-section social-media">
               <h4>Follow Our Journey</h4>
               <div className="social-icons">
@@ -60,8 +62,9 @@ const Footer = () => {
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} Bravoke Furniture. All Rights Reserved.</p>
           <div className="legal-links">
-              <a href="/privacy">Privacy Policy</a>
-              <a href="/terms">Terms of Service</a>
+              {/* Internal links use Link */}
+              <Link to="/privacy">Privacy Policy</Link>
+              <Link to="/terms">Terms of Service</Link>
           </div>
         </div>
       </div>
