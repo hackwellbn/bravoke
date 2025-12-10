@@ -10,7 +10,8 @@
   */
 
   /* Warm Dark Brown / Wood Tone - Excellent for primary text, backgrounds, and main buttons */
-  --color-primary: #06350e; /* Suggested: Dark Oak, Rich Walnut */ 
+  /* --color-primary: #06350e; Suggested: Dark Oak, Rich Walnut  */
+  --color-primary: #2A0B1F;
   --color-primary-dark: #644a2b; /* For button hover states */
 
   /* Light Accent / Stone / Light Wood - For backgrounds, cards, and light sections */
